@@ -21,7 +21,7 @@ export enum FormFieldTypes {
   SELECT = "select",
   SKELETON = "skeleton",
 }
-const PatientForm = () => {
+export const PatientForm = () => {
   const router = useRouter()
   const { setIsLoading } = useCareState()
 
@@ -92,4 +92,3 @@ const PatientForm = () => {
   )
 }
 
-export default PatientForm
