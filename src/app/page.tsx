@@ -30,7 +30,7 @@ export default function Home() {
         </div>
       </section>
       <Image
-        alt="Main Image"
+        alt="register"
         src={OnBoardingImage}
         width={1000}
         height={1000}
