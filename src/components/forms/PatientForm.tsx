@@ -1,4 +1,5 @@
 "use client"
+
 import { useCareState } from "@/components/Provider"
 import { Form } from "@/components/ui/form"
 import { UserFormValidation } from "@/lib/validation"
@@ -21,6 +22,7 @@ export enum FormFieldTypes {
   SELECT = "select",
   SKELETON = "skeleton",
 }
+
 export const PatientForm = () => {
   const router = useRouter()
   const { setIsLoading } = useCareState()

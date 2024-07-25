@@ -1,5 +1,4 @@
 "use client";
-
 import {
   getPaginationRowModel,
   ColumnDef,
@@ -10,7 +9,6 @@ import {
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import { useEffect } from "react";
-
 import { Button } from "@/components/ui/button";
 import {
   Table,
@@ -27,14 +25,8 @@ interface DataTableProps<TData, TValue> {
   data: TData[];
 }
 
-export function DataTable<TData, TValue>({
-  columns,
-  data,
-}: DataTableProps<TData, TValue>) {
-  const encryptedKey =
-    typeof window !== "undefined"
-      ? window.localStorage.getItem("accessKey")
-      : null;
+export function DataTable<TData, TValue>({ columns, data,
+}: DataTableProps<TData, TValue>) {const encryptedKey = typeof window !== "undefined" ? window.localStorage.getItem("accessKey") : null;
 
   useEffect(() => {
     const accessKey = encryptedKey && decryptKey(encryptedKey);

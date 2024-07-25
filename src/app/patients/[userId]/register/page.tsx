@@ -3,10 +3,13 @@ import { getUser } from "@/lib/actions/patient.actions"
 import Image from "next/image"
 import LogoImage from "../../../../../public/assets/icons/logo-full.svg"
 import RegisterImage from "../../../../../public/assets/images/register-img.png"
+import * as Sentry from "@sentry/nextjs"
 
 const Register = async ({ params: { userId } }: SearchParamProps) => {
   const user = await getUser(userId)
 
+  Sentry.metrics.set("user_view_register", user.name)
+  
   return (
     <div className="flex h-screen max-h-screen">
       <section className="remove-scrollbar container">
